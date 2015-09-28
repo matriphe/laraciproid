@@ -13,12 +13,19 @@ class City extends Model
      */
     public $timestamps = false;
 
+    /**
+     * Indicates if the model primary key.
+     *
+     * @var bool
+     */
+    protected $primaryKey = 'city_id';
+
     public function __construct()
     {
         $this->table = config('laraciproid.city');
     }
 
-    public function provinces()
+    public function province()
     {
         return $this->belongsTo(
             'App\Models\Province',

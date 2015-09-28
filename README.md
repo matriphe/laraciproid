@@ -81,6 +81,20 @@ public function run()
 }
 ```
 
+### Relationship
+
+Province table has one to many relationship of City table.
+
+```php
+// Get all cities under DI Yogyakarta (province_id = 34)
+$cities = App\Models\Province::find(34)->cities;
+
+foreach ($cities as $city) {
+    // Do something
+}
+```
+
+
 ### License
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
