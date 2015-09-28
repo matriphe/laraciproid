@@ -32,7 +32,7 @@ class CreateCityProvinceTables extends Migration
 		{
 		    $table->tinyInteger('province_id', 1, 1);
 		    $table->string('province_name', 50);
-		    $table->string('province_name_abbrevation', 50);
+		    $table->string('province_name_abbr', 50);
 		    $table->string('province_name_id', 50);
 		    $table->string('province_name_en', 50);
 		    $table->smallInteger('province_capital_city_id')->unsigned()->index();

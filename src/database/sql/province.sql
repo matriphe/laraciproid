@@ -1,4 +1,4 @@
-INSERT INTO `provinces` (`province_id`, `province_name`, `province_abbrevation`, `province_name_id`, `province_name_en`, `province_capital_city_id`, `iso_code`, `iso_name`, `iso_type`, `iso_geounit`, `timezone`, `province_lat`, `province_lon`) VALUES
+INSERT INTO `provinces` (`province_id`, `province_name`, `province_name_abbr`, `province_name_id`, `province_name_en`, `province_capital_city_id`, `iso_code`, `iso_name`, `iso_type`, `iso_geounit`, `timezone`, `province_lat`, `province_lon`) VALUES
 (11, 'Aceh', 'NAD', 'Nanggroe Aceh Darussalam', 'Nanggroe Aceh Darussalam', 1171, 'ID-AC', 'Aceh', 'autonomous province', 'SM', 7, 4.695135, 96.749397),
 (12, 'Sumatera Utara', 'Sumut', 'Sumatera Utara', 'North Sumatera', 1275, 'ID-SU', 'Sumatera Utara', 'province', 'SM', 7, 3.585242, 98.675598),
 (13, 'Sumatera Barat', 'Sumbar', 'Sumatera Barat', 'West Sumatera', 1371, 'ID-SB', 'Sumatera Barat', 'province', 'SM', 7, -0.953730, 100.351990),
