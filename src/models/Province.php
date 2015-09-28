@@ -29,7 +29,6 @@ class Province extends Model
     {
         return $this->hasMany(
             'App\Models\City',
-            config('laraciproid.city'),
             'city_id',
             'province_id'
         );

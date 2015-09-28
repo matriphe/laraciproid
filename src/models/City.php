@@ -20,11 +20,9 @@ class City extends Model
 
     public function provinces()
     {
-        return $this->belongsToMany(
+        return $this->belongsTo(
             'App\Models\Province',
-            config('laraciproid.province'),
-            'province_id',
-            'city_id'
+            'province_id'
         );
     }
 }
