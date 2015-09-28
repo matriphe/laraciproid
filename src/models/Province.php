@@ -13,16 +13,23 @@ class Province extends Model
      */
     public $timestamps = false;
 
+    /**
+     * Indicates if the model primary key.
+     *
+     * @var bool
+     */
+    protected $primaryKey = 'province_id';
+
     public function __construct()
     {
-        $this->table = config('laraciproid.province');
+        $this->table = Config::get('laraciproid.province');
     }
 
     public function cities()
     {
         return $this->hasMany(
             'App\Models\City',
-            config('laraciproid.city'),
+            Config::get('laraciproid.city'),
             'city_id',
             'province_id'
         );

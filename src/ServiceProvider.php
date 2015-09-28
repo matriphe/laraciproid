@@ -20,25 +20,27 @@ class ServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->publishes([
-			__DIR__.'/config/config.php' => config_path('laraciproid.php')
-		], 'config');
+        if (version_compare(Application::VERSION, '5.0', '>=')) {
+            $this->publishes([
+    			__DIR__.'/config/config.php' => config_path('laraciproid.php')
+    		], 'config');
 
-		$this->publishes([
-            __DIR__.'/database/migrations/' => database_path('migrations')
-        ], 'migrations');
+    		$this->publishes([
+                __DIR__.'/database/migrations/' => database_path('migrations')
+            ], 'migrations');
 
-        $this->publishes([
-            __DIR__.'/database/seeds/' => database_path('seeds')
-        ], 'seeds');
+            $this->publishes([
+                __DIR__.'/database/seeds/' => database_path('seeds')
+            ], 'seeds');
 
-        $this->publishes([
-            __DIR__.'/database/sql/' => database_path('sql')
-        ], 'sql');
+            $this->publishes([
+                __DIR__.'/database/sql/' => database_path('sql')
+            ], 'sql');
 
-        $this->publishes([
-            __DIR__.'/models/' => app_path('Models')
-        ], 'models');
+            $this->publishes([
+                __DIR__.'/models/' => app_path('Models')
+            ], 'models');
+        }
     }
 
     /**
@@ -48,15 +50,17 @@ class ServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->registerSkeleton();
+        if (version_compare(Application::VERSION, '5.0', '>=')) {
+            $this->registerSkeleton();
 
-        $this->mergeConfigFrom(
-		    __DIR__.'/config/config.php', 'laraciproid'
-        );
+            $this->mergeConfigFrom(
+    		    __DIR__.'/config/config.php', 'laraciproid'
+            );
 
-        config([
-            'config/laraciproid.php',
-        ]);
+            config([
+                'config/laraciproid.php',
+            ]);
+        }
     }
 
     private function registerSkeleton()
