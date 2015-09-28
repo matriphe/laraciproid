@@ -1,4 +1,4 @@
-# Larciproid
+# Laraciproid
 ## Laravel City Province ID
 
 Provides cities and provinces data of Indonesia. Use only on Laravel 5.x project.
