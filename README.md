@@ -92,6 +92,10 @@ $cities = App\Models\Province::find(34)->cities;
 foreach ($cities as $city) {
     // Do something
 }
+
+// Get province name of Bogor (city_id = 3271)
+$city = App\Models\City::find(3271);
+$province_name = $city->province->province_name;
 ```
 
 
