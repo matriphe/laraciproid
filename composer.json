@@ -1,5 +1,5 @@
 {
-    "name": "matriphe/laravel-city-province-id",
+    "name": "matriphe/laraciproid",
     "description": "Indonesia city and province data migration and seeder for Laravel.",
     "keywords": [
         "laravel", "data", "seeder", "city", "province", "indonesia", "id", "ina"
@@ -20,7 +20,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Matriphe\\LaravelCityProvinceID\\": "src/"
+            "Matriphe\\Laraciproid\\": "src/"
         }
     },
     "minimum-stability": "dev",

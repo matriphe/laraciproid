@@ -1,6 +1,6 @@
 <?php
 
-namespace Matriphe\LaravelCityProvinceID;
+namespace Matriphe\Laraciproid;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -21,7 +21,7 @@ class ServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->publishes([
-			__DIR__.'/config/config.php' => config_path('laravelcityprovinceid.php')
+			__DIR__.'/config/config.php' => config_path('laraciproid.php')
 		], 'config');
 
 		$this->publishes([
@@ -39,18 +39,18 @@ class ServiceProvider extends ServiceProvider
         $this->registerSkeleton();
 
         $this->mergeConfigFrom(
-		    __DIR__.'/config/config.php', 'laravelcityprovinceid'
+		    __DIR__.'/config/config.php', 'laraciproid'
         );
 
         config([
-                 'config/laravelcityprovinceid.php',
+                 'config/laraciproid.php',
         ]);
     }
 
     private function registerSkeleton()
     {
-        $this->app->bind('laravelcityprovinceid',function($app){
-            return new LaravelCityProvinceID($app);
+        $this->app->bind('laraciproid',function($app){
+            return new Laraciproid($app);
         });
     }
 }
