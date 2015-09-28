@@ -1,40 +1,56 @@
 <?php
-/**
- * Laravel 4 - Persistant Settings
- *
- * @author   Andreas Lutro <anlutro@gmail.com>
- * @license  http://opensource.org/licenses/MIT
- * @package  l4-settings
- */
 
 namespace Matriphe\LaravelCityProvinceID;
 
-use Illuminate\Foundation\Application;
+use Illuminate\Support\ServiceProvider;
 
-class ServiceProvider extends \Illuminate\Support\ServiceProvider
+class ServiceProvider extends ServiceProvider
 {
-	protected $defer = true;
+    /**
+     * Indicates if loading of the provider is deferred.
+     *
+     * @var bool
+     */
+    protected $defer = false;
 
-	public function register()
-	{
-        if (version_compare(Application::VERSION, '5.0', '>=')) {
-			$this->mergeConfigFrom(
-			    __DIR__.'/config/config.php', 'laravelcityprovinceid'
-            );
-		}
-	}
+    /**
+     * Perform post-registration booting of services.
+     *
+     * @return void
+     */
+    public function boot()
+    {
+        $this->publishes([
+			__DIR__.'/config/config.php' => config_path('laravelcityprovinceid.php')
+		], 'config');
 
-	public function boot()
-	{
-        if (version_compare(Application::VERSION, '5.0', '>=')) {
-			$this->publishes([
-				__DIR__.'/config/config.php' => config_path('laravelcityprovinceid.php')
-			], 'config');
+		$this->publishes([
+            __DIR__.'/migrations/' => database_path('migrations')
+        ], 'migrations');
+    }
 
-			$this->publishes([
-                __DIR__.'/migrations/' => database_path('migrations')
-            ], 'migrations');
-		}
-	}
+    /**
+     * Register any package services.
+     *
+     * @return void
+     */
+    public function register()
+    {
+        $this->registerSkeleton();
 
+        $this->mergeConfigFrom(
+		    __DIR__.'/config/config.php', 'laravelcityprovinceid'
+        );
+
+        config([
+                 'config/laravelcityprovinceid.php',
+        ]);
+    }
+
+    private function registerSkeleton()
+    {
+        $this->app->bind('laravelcityprovinceid',function($app){
+            return new LaravelCityProvinceID($app);
+        });
+    }
 }
