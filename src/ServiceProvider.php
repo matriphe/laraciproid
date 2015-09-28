@@ -25,8 +25,16 @@ class ServiceProvider extends ServiceProvider
 		], 'config');
 
 		$this->publishes([
-            __DIR__.'/migrations/' => database_path('migrations')
+            __DIR__.'/database/migrations/' => database_path('migrations')
         ], 'migrations');
+
+        $this->publishes([
+            __DIR__.'/database/sql/' => database_path('sql')
+        ], 'sql');
+
+        $this->publishes([
+            __DIR__.'/models/' => app_path('Models')
+        ], 'model');
     }
 
     /**
@@ -43,7 +51,7 @@ class ServiceProvider extends ServiceProvider
         );
 
         config([
-                 'config/laraciproid.php',
+            'config/laraciproid.php',
         ]);
     }
 
