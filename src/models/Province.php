@@ -22,14 +22,14 @@ class Province extends Model
 
     public function __construct()
     {
-        $this->table = config(('laraciproid.province');
+        $this->table = config('laraciproid.province');
     }
 
     public function cities()
     {
         return $this->hasMany(
             'App\Models\City',
-            config(('laraciproid.city'),
+            config('laraciproid.city'),
             'city_id',
             'province_id'
         );
