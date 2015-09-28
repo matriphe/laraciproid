@@ -28,7 +28,7 @@ class CreateCityProvinceTables extends Migration
 		    $table->float('city_lat', 10, 6)->nullable()->index();
 		    $table->float('city_lon', 10, 6)->nullable()->index();
 		});
-		Schema::create($this->tablename_city, function(Blueprint $table)
+		Schema::create($this->tablename_province, function(Blueprint $table)
 		{
 		    $table->tinyInteger('province_id', 1, 1);
 		    $table->string('province_name', 50);
