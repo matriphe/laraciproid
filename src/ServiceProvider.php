@@ -29,12 +29,16 @@ class ServiceProvider extends ServiceProvider
         ], 'migrations');
 
         $this->publishes([
+            __DIR__.'/database/seeds/' => database_path('seeds')
+        ], 'seeds');
+
+        $this->publishes([
             __DIR__.'/database/sql/' => database_path('sql')
         ], 'sql');
 
         $this->publishes([
             __DIR__.'/models/' => app_path('Models')
-        ], 'model');
+        ], 'models');
     }
 
     /**
