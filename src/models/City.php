@@ -15,14 +15,14 @@ class City extends Model
 
     public function __construct()
     {
-        $this->table = Config::get('laraciproid.city');
+        $this->table = config(('laraciproid.city');
     }
 
     public function provinces()
     {
         return $this->belongsToMany(
             'App\Models\Province',
-            Config::get('laraciproid.province'),
+            config(('laraciproid.province'),
             'province_id',
             'city_id'
         );

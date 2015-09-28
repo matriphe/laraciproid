@@ -7,8 +7,8 @@ class CreateCityProvinceTables extends Migration
 {
     public function __construct()
     {
-        $this->tablename_city = Config::get('laraciproid.city');
-        $this->tablename_province = Config::get('laraciproid.province');
+        $this->tablename_city = config(('laraciproid.city');
+        $this->tablename_province = config(('laraciproid.province');
     }
 
     /**
