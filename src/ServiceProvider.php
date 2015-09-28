@@ -20,7 +20,7 @@ class ServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        if (version_compare(Application::VERSION, '5.0', '>=')) {
+        if (version_compare(app()->version(), '5.0', '>=')) {
             $this->publishes([
     			__DIR__.'/config/config.php' => config_path('laraciproid.php')
     		], 'config');
@@ -50,7 +50,7 @@ class ServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        if (version_compare(Application::VERSION, '5.0', '>=')) {
+        if (version_compare(app()->version(), '5.0', '>=')) {
             $this->registerSkeleton();
 
             $this->mergeConfigFrom(
