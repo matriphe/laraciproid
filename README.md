@@ -1,7 +1,7 @@
 # Laraciproid
 ## Laravel City Province ID
 
-Provides cities and provinces data of Indonesia. Use only on Laravel 5.x project.
+Indonesia city and province data migration and seeder for Laravel 5.x.
 
 ### Installation
 
