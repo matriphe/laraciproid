@@ -1,6 +1,6 @@
 <?php
 
 return [
-	'city' => 'cities',
-	'province' => 'provinces',
+    'city' => 'cities',
+    'province' => 'provinces',
 ];

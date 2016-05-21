@@ -5,7 +5,7 @@ namespace Matriphe\Laraciproid;
 class Laraciproid
 {
     /**
-     * Create a new Skeleton Instance
+     * Create a new Skeleton Instance.
      */
     public function __construct()
     {

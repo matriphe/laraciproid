@@ -15,38 +15,38 @@ class ServiceProvider extends BaseServiceProvider
 
     /**
      * Perform post-registration booting of services.
-     *
-     * @return void
      */
     public function boot()
     {
         if (version_compare(app()->version(), '5.0', '>=')) {
             $this->publishes([
-    			__DIR__.'/config/config.php' => config_path('laraciproid.php')
-    		], 'config');
+                __DIR__.'/config/config.php' => config_path('laraciproid.php'),
+            ], 'config');
 
-    		$this->publishes([
-                __DIR__.'/database/migrations/' => database_path('migrations')
+            $this->publishes([
+                __DIR__.'/database/migrations/' => database_path('migrations'),
             ], 'migrations');
 
             $this->publishes([
-                __DIR__.'/database/seeds/' => database_path('seeds')
+                __DIR__.'/database/seeds/' => database_path('seeds'),
             ], 'seeds');
-
+            
             $this->publishes([
-                __DIR__.'/database/sql/' => database_path('sql')
+                __DIR__.'/database/sql/' => database_path('sql'),
             ], 'sql');
 
             $this->publishes([
-                __DIR__.'/models/' => app_path('Models')
+                __DIR__.'/models/' => app_path('Models'),
             ], 'models');
+
+            $this->publishes([
+                __DIR__.'/database/json/' => database_path('json'),
+            ], 'json');
         }
     }
 
     /**
      * Register any package services.
-     *
-     * @return void
      */
     public function register()
     {
@@ -54,7 +54,7 @@ class ServiceProvider extends BaseServiceProvider
             $this->registerSkeleton();
 
             $this->mergeConfigFrom(
-    		    __DIR__.'/config/config.php', 'laraciproid'
+                __DIR__.'/config/config.php', 'laraciproid'
             );
 
             config([
@@ -65,7 +65,7 @@ class ServiceProvider extends BaseServiceProvider
 
     private function registerSkeleton()
     {
-        $this->app->bind('laraciproid',function($app){
+        $this->app->bind('laraciproid', function ($app) {
             return new Laraciproid($app);
         });
     }

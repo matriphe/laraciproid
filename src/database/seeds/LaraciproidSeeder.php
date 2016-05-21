@@ -8,19 +8,32 @@ class LaraciproidSeeder extends Seeder
 {
     /**
      * Run the database seeds.
-     *
-     * @return void
      */
     public function run()
     {
         Province::truncate();
         City::truncate();
 
-        $city_sql = File::get(database_path('sql').'/city.sql');
-        $province_sql = File::get(database_path('sql').'/province.sql');
+        $jsonProvinces = File::get(database_path('json/provinces.json'));
+        $dataProvinces = json_decode($jsonProvinces);
+        $dataProvinces = collect($dataProvinces);
 
-        DB::statement($city_sql);
-        DB::statement($province_sql);
+        foreach ($dataProvinces as $d) {
+            $d = collect($d)->toArray();
+            $p = new Province();
+            $p->fill($d);
+            $p->save();
+        }
+
+        $jsonCities = File::get(database_path('json/cities.json'));
+        $dataCities = json_decode($jsonCities);
+        $dataCities = collect($dataCities);
+
+        foreach ($dataCities as $d) {
+            $d = collect($d)->toArray();
+            $p = new City();
+            $p->fill($d);
+            $p->save();
+        }
     }
 }
-

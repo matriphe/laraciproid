@@ -55,6 +55,8 @@ This command will add these files to your project:
  * `database/migrations/2015_09_28_175100_create_city_province_tables`, the migration file.
  * `database/sql/city.sql`, SQL file for city seed.
  * `database/sql/province.sql`, SQL file for province seed.
+ * `database/json/cities.json`, JSON file for cities seed.
+ * `database/json/provinces.json`, JSON file for provinces seed.
  * `database/seeds/LaraciproidSeeder.php`, table seeder file, read the SQL data.
  * `app/Models/City.php`, city model file.
  * `app/Models/Province.php`, province model file.
