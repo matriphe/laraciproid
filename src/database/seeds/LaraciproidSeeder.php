@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Database\Seeder;
-use App\Models\Province;
 use App\Models\City;
+use App\Models\Province;
+use Illuminate\Database\Seeder;
 
 class LaraciproidSeeder extends Seeder
 {

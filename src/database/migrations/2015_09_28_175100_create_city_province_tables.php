@@ -1,7 +1,7 @@
 <?php
 
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
 
 class CreateCityProvinceTables extends Migration
 {
@@ -21,7 +21,7 @@ class CreateCityProvinceTables extends Migration
             $table->tinyInteger('province_id')->unsigned()->index();
             $table->string('city_name', 50)->index();
             $table->string('city_name_full', 100)->index();
-            $table->enum('city_type', ['kabupaten', 'kota'])->nullable();
+            $table->enum('city_type', array('kabupaten', 'kota'))->nullable();
             $table->float('city_lat', 10, 6)->nullable()->index();
             $table->float('city_lon', 10, 6)->nullable()->index();
         });
@@ -35,12 +35,12 @@ class CreateCityProvinceTables extends Migration
             $table->string('iso_code', 5)->index();
             $table->string('iso_name', 50);
             $table->enum('iso_type',
-            [
+            array(
                 'province',
                 'autonomous province',
                 'special district',
                 'special region',
-            ]);
+            ));
             $table->string('iso_geounit', 2)->index();
             $table->tinyInteger('timezone');
             $table->float('province_lat', 10, 6)->nullable()->index();
