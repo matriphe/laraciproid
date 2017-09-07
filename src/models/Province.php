@@ -12,6 +12,18 @@ class Province extends Model
      * @var bool
      */
     public $timestamps = false;
+    /**
+     * The attributes that should be casted to native types.
+     *
+     * @var array
+     */
+    protected $casts = array(
+        'province_id' => 'integer',
+        'province_lat' => 'float',
+        'province_lon' => 'float',
+        'province_capital_city_id' => 'integer',
+        'timezone' => 'integer',
+    );
 
     /**
      * Indicates if the model primary key.

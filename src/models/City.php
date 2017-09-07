@@ -12,6 +12,17 @@ class City extends Model
      * @var bool
      */
     public $timestamps = false;
+    /**
+     * The attributes that should be casted to native types.
+     *
+     * @var array
+     */
+    protected $casts = array(
+        'city_id' => 'integer',
+        'province_id' => 'integer',
+        'city_lat' => 'float',
+        'city_lon' => 'float',
+    );
 
     /**
      * Indicates if the model primary key.
