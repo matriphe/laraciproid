@@ -61,7 +61,7 @@ class ServiceProvider extends BaseServiceProvider
 
     private function registerSkeleton()
     {
-        $this->app->bind('laraciproid', function ($app) {
+        $this->app->singleton('laraciproid', function ($app) {
             return new Laraciproid($app);
         });
     }

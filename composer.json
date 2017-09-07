@@ -21,6 +21,13 @@
             "Matriphe\\Laraciproid\\": "src/"
         }
     },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Matriphe\\Laraciproid\\ServiceProvider"
+            ]
+        }
+    },
     "minimum-stability": "dev",
     "prefer-stable": true
 }

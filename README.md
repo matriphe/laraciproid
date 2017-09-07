@@ -13,7 +13,11 @@ composer require matriphe/laraciproid:~1.0
 
 ### Configuration
 
-#### Laravel 5.1
+#### Laravel 5.5
+
+Nothing to do. Laraciproid will be loaded automatically.
+
+#### Laravel 5.1, 5.2, 5.3, and 5.4
 
 Open `config/app.php` and add this line on autoloaded service providers section.
 
