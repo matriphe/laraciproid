@@ -17,13 +17,13 @@ class Province extends Model
      *
      * @var array
      */
-    protected $casts = array(
+    protected $casts = [
         'province_id' => 'integer',
         'province_lat' => 'float',
         'province_lon' => 'float',
         'province_capital_city_id' => 'integer',
         'timezone' => 'integer',
-    );
+    ];
 
     /**
      * Indicates if the model primary key.

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\models;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -17,12 +17,12 @@ class City extends Model
      *
      * @var array
      */
-    protected $casts = array(
+    protected $casts = [
         'city_id' => 'integer',
         'province_id' => 'integer',
         'city_lat' => 'float',
         'city_lon' => 'float',
-    );
+    ];
 
     /**
      * Indicates if the model primary key.

@@ -19,25 +19,25 @@ class ServiceProvider extends BaseServiceProvider
     public function boot()
     {
         if (version_compare(app()->version(), '5.0', '>=')) {
-            $this->publishes(array(
+            $this->publishes([
                 __DIR__.'/config/config.php' => config_path('laraciproid.php'),
-            ), 'laraciproid-config');
+            ], 'laraciproid-config');
 
-            $this->publishes(array(
+            $this->publishes([
                 __DIR__.'/database/migrations/' => database_path('migrations'),
-            ), 'laraciproid-migrations');
+            ], 'laraciproid-migrations');
 
-            $this->publishes(array(
+            $this->publishes([
                 __DIR__.'/database/seeds/' => database_path('seeds'),
-            ), 'laraciproid-seeds');
+            ], 'laraciproid-seeds');
 
-            $this->publishes(array(
-                __DIR__.'/models/' => app_path('Models'),
-            ), 'laraciproid-models');
+            $this->publishes([
+                __DIR__.'/Models/' => app_path('Models'),
+            ], 'laraciproid-models');
 
-            $this->publishes(array(
+            $this->publishes([
                 __DIR__.'/database/json/' => database_path('json'),
-            ), 'laraciproid-json');
+            ], 'laraciproid-json');
         }
     }
 
@@ -53,9 +53,9 @@ class ServiceProvider extends BaseServiceProvider
                 __DIR__.'/config/config.php', 'laraciproid'
             );
 
-            config(array(
+            config([
                 'config/laraciproid.php',
-            ));
+            ]);
         }
     }
 

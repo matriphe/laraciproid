@@ -1,6 +1,6 @@
 <?php
 
-return array(
+return [
     'city' => 'cities',
     'province' => 'provinces',
-);
+];
