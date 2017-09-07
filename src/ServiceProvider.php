@@ -21,23 +21,23 @@ class ServiceProvider extends BaseServiceProvider
         if (version_compare(app()->version(), '5.0', '>=')) {
             $this->publishes(array(
                 __DIR__.'/config/config.php' => config_path('laraciproid.php'),
-            ), 'config');
+            ), 'laraciproid-config');
 
             $this->publishes(array(
                 __DIR__.'/database/migrations/' => database_path('migrations'),
-            ), 'migrations');
+            ), 'laraciproid-migrations');
 
             $this->publishes(array(
                 __DIR__.'/database/seeds/' => database_path('seeds'),
-            ), 'seeds');
+            ), 'laraciproid-seeds');
 
             $this->publishes(array(
                 __DIR__.'/models/' => app_path('Models'),
-            ), 'models');
+            ), 'laraciproid-models');
 
             $this->publishes(array(
                 __DIR__.'/database/json/' => database_path('json'),
-            ), 'json');
+            ), 'laraciproid-json');
         }
     }
 
