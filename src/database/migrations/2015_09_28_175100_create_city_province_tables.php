@@ -22,8 +22,8 @@ class CreateCityProvinceTables extends Migration
             $table->string('city_name', 50)->index();
             $table->string('city_name_full', 100)->index();
             $table->enum('city_type', array('kabupaten', 'kota'))->nullable();
-            $table->float('city_lat', 10, 6)->nullable()->index();
-            $table->float('city_lon', 10, 6)->nullable()->index();
+            $table->decimal('city_lat', 10, 6)->nullable()->index();
+            $table->decimal('city_lon', 11, 6)->nullable()->index();
         });
         Schema::create($this->tablename_province, function (Blueprint $table) {
             $table->tinyInteger('province_id', 1, 1);
@@ -43,8 +43,8 @@ class CreateCityProvinceTables extends Migration
             ));
             $table->string('iso_geounit', 2)->index();
             $table->tinyInteger('timezone');
-            $table->float('province_lat', 10, 6)->nullable()->index();
-            $table->float('province_lon', 10, 6)->nullable()->index();
+            $table->decimal('province_lat', 10, 6)->nullable()->index();
+            $table->decimal('province_lon', 11, 6)->nullable()->index();
         });
     }
 
