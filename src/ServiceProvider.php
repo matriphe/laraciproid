@@ -32,7 +32,7 @@ class ServiceProvider extends BaseServiceProvider
             ], 'laraciproid-seeds');
 
             $this->publishes([
-                __DIR__.'/Models/' => app_path('Models'),
+                __DIR__.'/models/' => app_path('models'),
             ], 'laraciproid-models');
 
             $this->publishes([
